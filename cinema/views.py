@@ -39,7 +39,7 @@ class MovieViewSet(viewsets.ModelViewSet):
 
     @staticmethod
     def _params_to_int(query_string: str) -> list[int]:
-        if not query_string:
+        if query_string:
             return [int(str_id) for str_id in query_string.split(",")]
         return []
 
