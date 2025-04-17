@@ -112,7 +112,7 @@ class TicketSerializer(serializers.ModelSerializer):
         movie_session = attrs.get("movie_session")
         row = attrs.get("row")
         seat = attrs.get("seat")
-        if movie_session and row and seat:
+        if movie_session is not None and row is not None and seat is not None:
             Ticket.validate(
                 row,
                 seat,
